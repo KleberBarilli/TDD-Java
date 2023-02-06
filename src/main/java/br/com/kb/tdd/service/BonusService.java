@@ -1,6 +1,7 @@
 package br.com.kb.tdd.service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import br.com.kb.tdd.entities.Employee;
 
@@ -11,7 +12,7 @@ public class BonusService {
 		if (amount.compareTo(new BigDecimal("1000")) > 0) {
 			amount = BigDecimal.ZERO;
 		}
-		return amount;
+		return amount.setScale(2, RoundingMode.HALF_UP);
 	}
 
 }
