@@ -19,4 +19,24 @@ public class ReadjustmentServiceTest {
 
         assertEquals(new BigDecimal("1030.00"), employee.getSalary());
     }
+
+    @Test
+    public void fifteenPercentReadjustForGoodPerformance(){
+        ReadjustmentService service = new ReadjustmentService();
+        Employee employee = new Employee("Kb", LocalDate.now(), new BigDecimal(("1000.00")));
+
+        service.makeReadjust(employee, Performance.GOOD);
+
+        assertEquals(new BigDecimal("1150.00"), employee.getSalary());
+    }
+
+    @Test
+    public void twentyPercentReadjustForAwesomePerformance(){
+        ReadjustmentService service = new ReadjustmentService();
+        Employee employee = new Employee("Kb", LocalDate.now(), new BigDecimal(("1000.00")));
+
+        service.makeReadjust(employee, Performance.AWESOME);
+
+        assertEquals(new BigDecimal("1200.00"), employee.getSalary());
+    }
 }
