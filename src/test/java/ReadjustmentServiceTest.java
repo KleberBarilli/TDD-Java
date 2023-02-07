@@ -39,4 +39,5 @@ public class ReadjustmentServiceTest {
 
         assertEquals(new BigDecimal("1200.00"), employee.getSalary());
     }
+
 }
